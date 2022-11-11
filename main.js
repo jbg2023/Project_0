@@ -1,6 +1,18 @@
 //variable for game board
 let gameBoard;
 let turn = 'X';
+//determine a winner
+let winGame;
+const threeInRow = [
+    [0, 1, 2],
+    [0, 4, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [2, 4, 6],
+    [3, 4, 5],
+    [6, 7, 8],
+];
 
 //event listeners
 document.getElementById('board').addEventListener('click', takeTurn);
@@ -30,6 +42,7 @@ function makeMove() {
     gameBoard.forEach(function(move, index){
         boxes[index].textContent = move;
     });
+    whosTurn.textContent = `Your turn, ${turn}!`;
 };
 
 const boxes = Array.from(document.querySelectorAll('#board div'));
