@@ -1,6 +1,7 @@
 //variable for game board
 let gameBoard;
 let turn = 'X';
+
 //determine a winner
 let winGame;
 const threeInRow = [
@@ -13,14 +14,15 @@ const threeInRow = [
     [3, 4, 5],
     [6, 7, 8],
 ];
+function winning() {}
 
 //event listeners
 document.getElementById('board').addEventListener('click', takeTurn);
 
 //uses findIndex to match index of array to square clicked
-function takeTurn(boxClick) {
+function takeTurn() {
     let i = boxes.findIndex(function(box) {
-        return box === boxClick.target;
+        return box === event.target;
     });
     gameBoard[i] = turn;
     if (turn === 'X') {
