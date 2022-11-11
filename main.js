@@ -8,7 +8,7 @@ document.getElementById('board').addEventListener('click', takeTurn);
 //uses findIndex to match index of array to square clicked
 function takeTurn(boxClick) {
     let i = boxes.findIndex(function(box) {
-        return box === boxClick.targetBox;
+        return box === boxClick.target;
     });
     gameBoard[i] = turn;
     if (turn === 'X') {
