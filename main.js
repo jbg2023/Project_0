@@ -6,13 +6,13 @@ function startGame() {
     gameBoard = ['', '', '', '', '', '', '', '', '',];
     makeMove();
 };
-startGame();
+
 
 function makeMove() {
     gameBoard.forEach(function(move, index){
-        console.log(move, index);
+        boxes[index].textContent = move;
     });
 };
 
 const boxes = Array.from(document.querySelectorAll('#board div'));
-console.log(boxes)
+startGame();
