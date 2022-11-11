@@ -5,10 +5,18 @@ let turn = 'X';
 //event listeners
 document.getElementById('board').addEventListener('click', takeTurn);
 
+//uses findIndex to match index of array to square clicked
 function takeTurn(boxClick) {
     let i = boxes.findIndex(function(box) {
         return box === boxClick.targetBox;
     });
+    gameBoard[i] = turn;
+    if (turn === 'X') {
+        turn = 'O'
+        } else {
+            turn = 'X'
+        };
+        makeMove();
 };
 
 //function makes array of boxes on the game board (3x3=9 boxes)
