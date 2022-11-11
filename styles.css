@@ -1,0 +1,18 @@
+body {
+    text-align: center;
+}
+
+#board {
+    width: 500px;
+	height: 500px;
+	margin: 0 auto;
+	display: grid;
+	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+.box {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
