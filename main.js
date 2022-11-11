@@ -14,9 +14,9 @@ function takeTurn(boxClick) {
     if (turn === 'X') {
         turn = 'O'
         } else {
-            turn = 'X'
+        turn = 'X'
         };
-        makeMove();
+    makeMove();
 };
 
 //function makes array of boxes on the game board (3x3=9 boxes)
@@ -33,4 +33,5 @@ function makeMove() {
 };
 
 const boxes = Array.from(document.querySelectorAll('#board div'));
+const whosTurn = document.querySelector('h3');
 startGame();
