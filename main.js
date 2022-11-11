@@ -13,3 +13,6 @@ function makeMove() {
         console.log(move, index);
     });
 };
+
+const boxes = Array.from(document.querySelectorAll('#board div'));
+console.log(boxes)
