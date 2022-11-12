@@ -70,6 +70,9 @@ function makeMove() {
     };
 };
 
+//restart
+document.getElementById('restart').addEventListener('click', startGame);
+
 const boxes = Array.from(document.querySelectorAll('#board div'));
 const whosTurn = document.querySelector('h3');
 startGame();
