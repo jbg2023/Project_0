@@ -61,7 +61,13 @@ function makeMove() {
     gameBoard.forEach(function(move, index){
         boxes[index].textContent = move;
     });
-    whosTurn.textContent = `Your turn, ${turn}!`;
+    if (winGame === 'Tie') {
+        whosTurn.textContent = `It's a tie!`
+    } else if (winGame) {
+        whosTurn.textContent = `${winGame} wins!`
+    } else {
+        whosTurn.textContent = `Your turn, ${turn}!`
+    };
 };
 
 const boxes = Array.from(document.querySelectorAll('#board div'));
