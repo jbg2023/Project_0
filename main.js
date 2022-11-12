@@ -66,11 +66,21 @@ function makeMove() {
         startGame();
     } else if (winGame) {
         whosTurn.textContent = `${winGame} wins!`;
-        startGame();
+        winAlert();
     } else {
         whosTurn.textContent = `Your turn, ${turn}!`
     };
 };
+
+let timeout;
+function winAlert() {
+    timeout = setTimeout(winAlert, 100);
+    function winAlert() {
+        alert(`${winGame} wins!`);
+        window.location.reload();
+    }
+}
+
 
 //restart
 document.getElementById('restart').addEventListener('click', startGame);
