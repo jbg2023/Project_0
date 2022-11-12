@@ -22,7 +22,16 @@ function winning() {
             && gameBoard[a[0]] === gameBoard[a[2]]) winner = gameBoard[a[0]];
             return winner;
     });
+        if (winner) {
+            return winner
+        } else if (gameBoard.includes('')) {
+            return null
+        } else {
+            return 'Tie'
+}
 };
+
+
 
 //event listeners
 document.getElementById('board').addEventListener('click', takeTurn);
