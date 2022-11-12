@@ -63,7 +63,7 @@ function makeMove() {
     });
     if (winGame === 'Tie') {
         whosTurn.textContent = `It's a tie!`;
-        startGame();
+        tieAlert();
     } else if (winGame) {
         whosTurn.textContent = `${winGame} wins!`;
         winAlert();
@@ -77,6 +77,14 @@ function winAlert() {
     timeout = setTimeout(winAlert, 100);
     function winAlert() {
         alert(`${winGame} wins!`);
+        window.location.reload();
+    }
+}
+
+function tieAlert() {
+    timeout = setTimeout(tieAlert, 100);
+    function tieAlert() {
+        alert(`It's a tie!`);
         window.location.reload();
     }
 }
