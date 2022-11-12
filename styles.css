@@ -51,7 +51,7 @@ h2 {
     background-color: #BBDED7;
     font-size: 75px;
     font-family: lobster, sans-serif;
-    
+    cursor: pointer;
 }
 
 #restart {
@@ -62,4 +62,5 @@ h2 {
     font-family: 'Prompt', sans-serif;
     font-size: 15px;
     font-weight: bolder;
+    cursor: pointer;
 }
