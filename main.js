@@ -62,9 +62,11 @@ function makeMove() {
         boxes[index].textContent = move;
     });
     if (winGame === 'Tie') {
-        whosTurn.textContent = `It's a tie!`
+        whosTurn.textContent = `It's a tie!`;
+        startGame();
     } else if (winGame) {
-        whosTurn.textContent = `${winGame} wins!`
+        whosTurn.textContent = `${winGame} wins!`;
+        startGame();
     } else {
         whosTurn.textContent = `Your turn, ${turn}!`
     };
