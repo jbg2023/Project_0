@@ -14,7 +14,15 @@ const threeInRow = [
     [3, 4, 5],
     [6, 7, 8],
 ];
-function winning() {}
+
+function winning() {
+    let winner = null;
+    threeInRow.forEach(function(a, b){
+        if (gameBoard[a[0]] && gameBoard[a[0]] === gameBoard[a[1]]
+            && gameBoard[a[0]] === gameBoard[a[2]]) winner = gameBoard[a[0]];
+            return winner;
+    });
+};
 
 //event listeners
 document.getElementById('board').addEventListener('click', takeTurn);
@@ -30,6 +38,7 @@ function takeTurn() {
         } else {
         turn = 'X'
         };
+    winGame = winning();
     makeMove();
 };
 
@@ -38,7 +47,6 @@ function startGame() {
     gameBoard = ['', '', '', '', '', '', '', '', '',];
     makeMove();
 };
-
 
 function makeMove() {
     gameBoard.forEach(function(move, index){
