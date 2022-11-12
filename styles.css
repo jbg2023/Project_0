@@ -1,5 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&family=Lobster&family=Prompt&display=swap');
+
 body {
     text-align: center;
+    background-color: #FFF6F7;
+}
+
+h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+}
+
+h2 {
+    font-family: 'Prompt', sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+#rules {
+    font-family: 'Prompt', sans-serif;
+    border: 5px solid #1E4968;
+    border-radius: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    padding: 5px;
+    background-color: #8BC5D2;
 }
 
 #board {
@@ -8,11 +33,30 @@ body {
 	margin: 0 auto;
 	display: grid;
 	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    border: 5px solid #1E4968;
+    border-radius: 4em;
+    background-color: #8BC5D2;
+    
 }
 
 .box {
-    border: 1px solid black;
+    border: 3px solid #1E4968;
+    border-radius: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #BBDED7;
+    font-size: 50px;
+    font-family: lobster, sans-serif;
+    
+}
+
+#restart {
+    padding: 1em;
+    background-color: #BBDED7;
+    border-radius: 1em;
+    border: 3px solid #1E4968;
+    font-family: 'Prompt', sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
 }

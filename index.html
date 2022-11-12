@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="main.js" defer></script>
-    <title>Tic Tac Toe!</title>
+    <title>Tic-Tac-Toe!</title>
 </head>
 <body>
     <div id="ticTacToe">
-        <h1>Tic Tac Toe</h1>
-        <h3>It's X's turn</h3>
-            <p>The game is simple:<br>Player 1 (X's) clicks a box
+        <h1>Tic-Tac-Toe</h1>
+        <div id="rules">
+            The game is simple:<br>Player 1 (X's) clicks a box
                 <br>then...<br>Player 2 (O's) clicks a box!
-                <br>First to get three X's or O's wins!
+                <br>First to get three X's or O's in a row wins!
+        </div>        
             </p>
-        <div id="board">
+        <br><div id="board">
             <div class="box"></div>
             <div class="box"></div>
             <div class="box"></div>
@@ -27,7 +28,8 @@
             <div class="box"></div>
             <div class="box"></div>
         </div>
-            <button id="restart">Restart</button>
+        <h2>It's X's turn</h2>
+            <br><button id="restart">Restart</button>
     </div>
 </body>
 </html>
