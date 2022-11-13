@@ -2,5 +2,5 @@
 ## Tic-Tac-Toe
 ###### This is a simple Tic-Tac-Toe game built with HTML, CSS, and JS.
 
-**_Very_ MVP edition**
-More styling to come!
+**MVP edition**
+Has score keeping function, needs to be displayed(coming soon!)
