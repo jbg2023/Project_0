@@ -15,6 +15,7 @@ const threeInRow = [
     [6, 7, 8],
 ];
 
+
 function winning() {
     let winner = null;
     threeInRow.forEach(function(a, b){
@@ -28,7 +29,7 @@ function winning() {
             return null
         } else {
             return 'Tie'
-}
+        }
 };
 
 
@@ -55,6 +56,8 @@ function takeTurn() {
 function startGame() {
     gameBoard = ['', '', '', '', '', '', '', '', '',];
     makeMove();
+    sessionStorage.xScore;
+    sessionStorage.oScore;
 };
 
 function makeMove() {
@@ -66,11 +69,30 @@ function makeMove() {
         tieAlert();
     } else if (winGame) {
         whosTurn.textContent = `${winGame} wins!`;
+        keepScore();
         winAlert();
     } else {
         whosTurn.textContent = `Your turn, ${turn}!`
     };
 };
+
+function keepScore() {
+    let xScore;
+    let oScore;
+    let newXScore = 0;
+    let newOScore = 0;
+    if (winGame === 'X') {
+        sessionStorage.xScore = Number(sessionStorage.xScore) + 1;
+        newXScore = sessionStorage.xScore;
+        
+    } else if (winGame === 'O') {
+        sessionStorage.oScore = Number(sessionStorage.oScore) + 1;
+        newOScore = sessionStorage.oScore;
+
+    }
+     console.log(newXScore);
+     console.log(newOScore);
+}
 
 let timeout;
 function winAlert() {
