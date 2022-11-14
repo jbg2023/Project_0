@@ -1,9 +1,9 @@
-//variable for game board
 let gameBoard;
 let turn = 'X';
-
-//determine a winner
+let timeout;
 let winGame;
+const boxes = Array.from(document.querySelectorAll('#board div'));
+const whosTurn = document.querySelector('h2');
 const threeInRow = [
     [0, 1, 2],
     [0, 4, 8],
@@ -15,6 +15,8 @@ const threeInRow = [
     [6, 7, 8],
 ];
 
+document.getElementById('restart').addEventListener('click', startGame);
+document.getElementById('board').addEventListener('click', takeTurn);
 
 function winning() {
     let winner = null;
@@ -32,32 +34,24 @@ function winning() {
         }
 };
 
-
-
-//event listeners
-document.getElementById('board').addEventListener('click', takeTurn);
-
-//uses findIndex to match index of array to square clicked
 function takeTurn() {
     let i = boxes.findIndex(function(box) {
         return box === event.target;
-    });
+    }); 
     gameBoard[i] = turn;
     if (turn === 'X') {
-        turn = 'O'
+        turn = 'O';
         } else {
         turn = 'X'
-        };
+        }; 
     winGame = winning();
-    makeMove();
+    makeMove();  
 };
 
-//function makes array of boxes on the game board (3x3=9 boxes)
 function startGame() {
     gameBoard = ['', '', '', '', '', '', '', '', '',];
     makeMove();
-    sessionStorage.xScore;
-    sessionStorage.oScore;
+    
 };
 
 function makeMove() {
@@ -69,32 +63,28 @@ function makeMove() {
         tieAlert();
     } else if (winGame) {
         whosTurn.textContent = `${winGame} wins!`;
-        keepScore();
         winAlert();
+        keepScore(); 
     } else {
-        whosTurn.textContent = `Your turn, ${turn}!`
-    };
+        whosTurn.textContent = `Your turn, ${turn}!`;
+    }; 
+    
 };
 
-function keepScore() {
-    let xScore;
-    let oScore;
-    let newXScore = 0;
-    let newOScore = 0;
-    if (winGame === 'X') {
-        sessionStorage.xScore = Number(sessionStorage.xScore) + 1;
-        newXScore = sessionStorage.xScore;
-        
-    } else if (winGame === 'O') {
-        sessionStorage.oScore = Number(sessionStorage.oScore) + 1;
-        newOScore = sessionStorage.oScore;
+// let oScore = parseInt(sessionStorage.getItem('oScore'));
+// let xScore = parseInt(sessionStorage.getItem('xScore'));
+// function keepScore() {
+//     if (whosTurn.textContent === 'X wins!') {
+//         let xScore;
+//         sessionStorage.setItem('xScore', ++xScore);
+//     } else {
+//         let oScore;
+//         sessionStorage.setItem('oScore', ++oScore);
+//     } 
+// }  
+// console.log(oScore)
+// console.log(xScore)
 
-    }
-     console.log(newXScore);
-     console.log(newOScore);
-}
-
-let timeout;
 function winAlert() {
     timeout = setTimeout(winAlert, 100);
     function winAlert() {
@@ -111,10 +101,4 @@ function tieAlert() {
     }
 }
 
-
-//restart
-document.getElementById('restart').addEventListener('click', startGame);
-
-const boxes = Array.from(document.querySelectorAll('#board div'));
-const whosTurn = document.querySelector('h2');
 startGame();
